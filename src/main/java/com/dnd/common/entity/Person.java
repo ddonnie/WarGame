@@ -1,3 +1,5 @@
+package com.dnd.common.entity;
+
 import java.util.Random;
 
 /**

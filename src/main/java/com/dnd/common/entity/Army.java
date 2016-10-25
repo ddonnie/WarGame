@@ -1,3 +1,5 @@
+package com.dnd.common.entity;
+
 /**
  * Created by Orlov on 11.10.2016.
  */
@@ -9,7 +11,7 @@ public class Army {
     Vanguard vanguard;
 
 
-    Army(String armyName, int armySize) {
+    public Army(String armyName, int armySize) {
         this.armyName = armyName;
         for (int i = 0; i < armySize; i++) {
             armyPool.composition.add(trainingCamp.trainWarrior(armyName));
@@ -17,6 +19,10 @@ public class Army {
         System.out.println("Army <<" + armyName + ">> is created");
     }
 
+
+    public String getArmyName() {
+        return armyName;
+    }
 
     void updateVanguard(RoundSequence sequence) {
 

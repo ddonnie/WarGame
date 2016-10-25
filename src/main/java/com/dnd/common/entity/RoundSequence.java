@@ -1,3 +1,5 @@
+package com.dnd.common.entity;
+
 import java.util.ArrayList;
 import java.util.List;
 

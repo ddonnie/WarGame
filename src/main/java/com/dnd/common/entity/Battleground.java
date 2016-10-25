@@ -1,3 +1,5 @@
+package com.dnd.common.entity;
+
 public class Battleground {
     int frontline;
     Army armyRed;
@@ -5,7 +7,7 @@ public class Battleground {
     RoundSequence sequence = new RoundSequence();
 
 
-    Battleground(Army red, Army blue, int size) {
+    public Battleground(Army red, Army blue, int size) {
         frontline = size;
         armyRed = red;
         armyBlue = blue;

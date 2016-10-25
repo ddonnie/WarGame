@@ -1,3 +1,5 @@
+package com.dnd.common.entity;
+
 /**
  * Created by Orlov on 13.10.2016.
  */
