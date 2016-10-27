@@ -1,10 +1,86 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <head>
-    <meta charset="UTF-8">
-    <title>DnD Simulator</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>DnD Battle Simulator</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="/resources/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="/resources/css/index.css" rel="stylesheet">
+
+
 </head>
+
 <body>
-Hello!
+
+
+<!-- Page Content -->
+<div class="container">
+
+    <!-- Projects Row -->
+    <div class="row">
+
+        <div class="col-md-4">
+            <form th:action="@{/battle}">
+                <div>
+                    <input type="text" id="firstArmyName" name="firstArmyName" required placeholder=" "/>
+                    <label for="firstArmyName">Army name</label>
+                </div>
+
+                <div>
+                    <input type="text" id="firstArmySize" name="firstArmySize" required placeholder=" "/>
+                    <label for="firstArmySize">Army size</label>
+                    <div class="requirements">
+                        Must be a number.
+                    </div>
+                </div>
+            </form>
+        </div>
+
+
+        <div class="col-md-4">
+            <button type="button" class="btn btn-danger btn-circle btn-xl center-block">
+                <img src="/resources/assets/img/swords.png"/>
+            </button>
+        </div>
+
+        <div class="col-md-4">
+            <form action="#0">
+                <div>
+                    <input type="text" id="secondArmyName" name="secondArmyName" required placeholder=" "/>
+                    <label for="secondArmyName">Army name</label>
+                </div>
+                <div>
+                    <input type="text" id="secondArmySize" name="secondArmySize" required placeholder=" "/>
+                    <label for="secondArmySize">Army size</label>
+                    <div class="requirements">
+                        Must be a number.
+                    </div>
+                </div>
+            </form>
+        </div>
+
+    </div>
+    <!-- /.row -->
+
+</div>
+<!-- /.container -->
+
+<!-- jQuery -->
+<script src="/resources/js/jquery.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/resources/js/bootstrap.min.js"></script>
+
 </body>
+
 </html>

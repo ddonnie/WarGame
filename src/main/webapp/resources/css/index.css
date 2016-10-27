@@ -1,0 +1,93 @@
+form {
+    max-width: 450px;
+    margin: 0 auto;
+}
+form > div {
+    position: relative;
+    background: white;
+    border-bottom: 1px solid #ccc;
+}
+form > div > label {
+    opacity: 0.3;
+    font-weight: bold;
+    position: absolute;
+    top: 22px;
+    left: 20px;
+}
+form > div > input[type="text"] {
+    width: 100%;
+    border: 0;
+    padding: 20px 20px 20px 50px;
+    background: #eee;
+}
+form > div > input[type="text"]:focus {
+    outline: 0;
+    background: white;
+}
+form > div > input[type="text"]:focus + label {
+    opacity: 0;
+}
+form > div > input[type="text"]:valid {
+    background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/check.svg);
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: 20px 20px;
+}
+form > div > input[type="text"]:valid + label {
+    opacity: 0;
+}
+form > div > input[type="text"]:invalid:not(:focus):not(:placeholder-shown) {
+    background: pink;
+}
+form > div > input[type="text"]:invalid:not(:focus):not(:placeholder-shown) + label {
+    opacity: 0;
+}
+form > div > input[type="text"]:invalid:focus:not(:placeholder-shown) ~ .requirements {
+    max-height: 200px;
+    padding: 0 30px 20px 50px;
+}
+form > div .requirements {
+    padding: 0 30px 0 50px;
+    color: #999;
+    max-height: 0;
+    -webkit-transition: 0.28s;
+    transition: 0.28s;
+    overflow: hidden;
+    color: red;
+    font-style: italic;
+}
+
+body {
+    background: #333;
+    font-family: 'PT Sans', sans-serif;
+    padding: 20px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.btn-circle {
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    padding: 6px 6px;
+    font-size: 12px;
+    line-height: 1.428571429;
+    border-radius: 50%;
+}
+.btn-circle.btn-lg {
+    width: 120px;
+    height: 120px;
+    padding: 10px 10px;
+    font-size: 18px;
+    line-height: 1.33;
+}
+.btn-circle.btn-xl {
+    width: 140px;
+    height:140px;
+    padding: 10px 10px;
+    font-size: 24px;
+    line-height: 1.33;
+}
+
