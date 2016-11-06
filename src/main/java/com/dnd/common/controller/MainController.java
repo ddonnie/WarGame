@@ -1,6 +1,8 @@
 package com.dnd.common.controller;
 
 import com.dnd.common.entity.Army;
+import com.dnd.common.entity.ArmyForm;
+import com.dnd.common.entity.Battleground;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -8,18 +10,34 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-@RequestMapping("/battle" )
+@RequestMapping("/")
 public class MainController {
 
-    @RequestMapping(method = RequestMethod.GET)
-    public String armyForm(Model model) {
-        return "index";
+    @RequestMapping(value = "/summary", method = RequestMethod.GET)
+    public String summaryArmyForm(Model model) {
+        model.addAttribute("armyForm", new ArmyForm());
+        return "summary";
     }
 
-    @RequestMapping(method = RequestMethod.POST)
-    public String submitForm(Model model, @ModelAttribute Army army) {
-        return "index";
+    @RequestMapping(value = "/summary", method = RequestMethod.POST)
+    public String summaryArmySubmit(@ModelAttribute ArmyForm armyForm, Model model) {
+        model.addAttribute("armyForm", armyForm);
+        Army leftArmy = new Army();
+        leftArmy.setArmyName(armyForm.getArmyNameLeft());
+        leftArmy.setArmySize(armyForm.getArmySizeLeft());
+        leftArmy.fillArmy();
+        Army rightArmy = new Army();
+        rightArmy.setArmyName(armyForm.getArmyNameRight());
+        rightArmy.setArmySize(armyForm.getArmySizeRight());
+        rightArmy.fillArmy();
+        Battleground battleground = new Battleground(leftArmy, rightArmy, 100);
+        model.addAttribute("winner", battleground.battle());
+        return "battle";
     }
 
+    @RequestMapping (value = "/battle", method = RequestMethod.GET)
+    public String battleResolve(@ModelAttribute("winner") Army army, Model model) {
+        return "battle";
+    }
 
 }

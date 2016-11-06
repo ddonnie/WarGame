@@ -17,7 +17,7 @@ public class Battleground {
         armyBlue.updateVanguard(sequence);
     }
 
-    public void battle() {
+    public Army battle() {
 
         int counter = 1;
 
@@ -32,7 +32,7 @@ public class Battleground {
             for (int i = 0; i < 5; i++) {
                 for (Warrior warrior : sequence.order) {
                     if (!warrior.isDead) {
-                        if (!warrior.nation.equals(armyRed.armyName)) {
+                        if (!warrior.nation.equals(armyRed.getArmyName())) {
                             warrior.attack(armyRed.vanguard);
                         } else {
                             warrior.attack(armyBlue.vanguard);
@@ -47,13 +47,13 @@ public class Battleground {
                     armyRed.vanguard.composition.size() +
                     armyBlue.armyPool.composition.size() +
                     armyBlue.vanguard.composition.size();
-            System.out.println("COMBATANTS LEFT: " + combatants);
-
+            System.out.println(armyRed.getArmyName() + " has " + (armyRed.vanguard.composition.size() + armyRed.armyPool.composition.size()));
+            System.out.println(armyBlue.getArmyName() + " has " + (armyBlue.vanguard.composition.size() + armyBlue.armyPool.composition.size()) );
         }
         if (armyRed.vanguard.composition.size() > armyBlue.vanguard.composition.size()) {
-            System.out.println("WINNER IS " + armyRed.armyName);
+            return armyRed;
         } else {
-            System.out.println("WINNER IS " + armyBlue.armyName);
+            return armyBlue;
         }
     }
 }

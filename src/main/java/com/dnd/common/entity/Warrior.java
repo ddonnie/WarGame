@@ -56,6 +56,8 @@ abstract class Warrior extends Person implements Comparable<Warrior> {
         return isHit;
     }
 
+
+
     public boolean rollDamageDice(Warrior enemy) {
         //TODO DAMAGE ZERO CHECK
 

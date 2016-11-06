@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Battle results</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="/resources/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="/resources/css/style.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+<div class="center-block" style="text-align: center">
+
+    <p th:text="'Winner is ' + ${winner.armyName}"/>
+    <button class="returnbutton" onclick="window.location='/summary';">New battle</button>
+
+</div>
+
+<!-- jQuery -->
+<script src="/resources/js/jquery.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/resources/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

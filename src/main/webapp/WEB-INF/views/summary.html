@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Summary</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="/resources/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="/resources/css/style.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+<div class="center-block">
+    <form th:action="@{/summary}" method="post">
+        <div>
+            <input type="text" th:field="*{armyForm.armyNameLeft}"/>
+        </div>
+        <div>
+            <input type="text" th:field="*{armyForm.armySizeLeft}"/>
+        </div>
+        <div>
+            <input type="text" th:field="*{armyForm.armyNameRight}"/>
+        </div>
+        <div>
+            <input type="text" th:field="*{armyForm.armySizeRight}"/>
+        </div>
+        <button class="submitbutton" value="submit">Submit</button>
+    </form>
+</div>
+
+
+<!-- jQuery -->
+<script src="/resources/js/jquery.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/resources/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

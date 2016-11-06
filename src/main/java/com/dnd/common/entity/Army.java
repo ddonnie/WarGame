@@ -5,23 +5,33 @@ package com.dnd.common.entity;
  */
 public class Army {
 
-    String armyName;
+    private int armySize;
+    private String armyName;
     TrainingCamp trainingCamp = new TrainingCamp();
     Troop armyPool = new Troop();
     Vanguard vanguard;
 
 
-    public Army(String armyName, int armySize) {
-        this.armyName = armyName;
-        for (int i = 0; i < armySize; i++) {
-            armyPool.composition.add(trainingCamp.trainWarrior(armyName));
-        }
-        System.out.println("Army <<" + armyName + ">> is created");
+    public int getArmySize() {
+        return armySize;
     }
 
+    public void setArmySize(int armySize) {
+        this.armySize = armySize;
+    }
 
     public String getArmyName() {
         return armyName;
+    }
+
+    public void setArmyName(String armyName) {
+        this.armyName = armyName;
+    }
+
+    public void fillArmy() {
+        for (int i = 0; i < armySize; i++) {
+            armyPool.composition.add(trainingCamp.trainWarrior(armyName));
+        }
     }
 
     void updateVanguard(RoundSequence sequence) {
