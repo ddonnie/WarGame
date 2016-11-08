@@ -1,6 +1,10 @@
 body {
-    background: #0e1e24 url("/resources/assets/img/background012cropped.gif") no-repeat;
+    background: #0e1e24 url("/resources/assets/img/background012cropped.gif") fixed no-repeat;
     font-family: 'PT Sans', sans-serif;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: 100% auto;
     padding: 20px;
 }
 
