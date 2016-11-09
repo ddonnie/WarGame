@@ -1,5 +1,5 @@
 body {
-    background: #0e1e24 url("/resources/assets/img/background012cropped.gif") fixed no-repeat;
+    background: #0e1e24 url("/resources/assets/img/background.gif") fixed no-repeat;
     font-family: 'PT Sans', sans-serif;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -12,11 +12,14 @@ form {
     max-width: 240px;
     margin: 0 auto;
     font-size: 14px;
+    border: 50px solid transparent;
+    border-image-source: url("/resources/assets/img/formborder.png");
+    border-image-slice: 110 fill;
 }
 form > div {
     position: relative;
-    background: white;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid #04282e;
+
 }
 
 form > div > input[type="text"] {
@@ -24,14 +27,14 @@ form > div > input[type="text"] {
     width: 100%;
     border: 0;
     padding: 10px 40px 10px 40px;
-    background: #eee;
+    background: #0000001a;
 }
 
 
 form > .submitbutton {
     width: 100%;
     border: 0;
-    background-color: #4cae4c;
+    background-color: #4cae4c99;
     border: none;
     color: white;
     padding: 10px;
