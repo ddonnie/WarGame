@@ -24,8 +24,14 @@
 
 <div class="center-block" style="text-align: center">
 
-    <p th:text="'Winner is ' + ${winner.armyName}"/>
-    <button class="returnbutton" onclick="window.location='/summary';">New battle</button>
+    <div id="textbox">
+
+        <p th:text="'Winner is ' + ${winner.armyName}"/>
+        <p th:utext="${battleLog}"/>
+        <button class="returnbutton" onclick="window.location='/summary';">New battle</button>
+
+    </div>
+    >
 
 </div>
 

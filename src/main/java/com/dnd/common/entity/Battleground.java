@@ -5,6 +5,17 @@ public class Battleground {
     Army armyRed;
     Army armyBlue;
     RoundSequence sequence = new RoundSequence();
+    String battleLog = "";
+
+    public String getBattleLog() {
+        return battleLog;
+    }
+
+    public void setBattleLog(String battleLog) {
+        this.battleLog = battleLog;
+    }
+
+
 
 
     public Battleground(Army red, Army blue, int size) {
@@ -20,7 +31,6 @@ public class Battleground {
     public Army battle() {
 
         int counter = 1;
-
 
         while ((armyRed.armyPool.composition.size() > 0
                 || armyRed.vanguard.composition.size() > 0)
@@ -40,14 +50,17 @@ public class Battleground {
                     }
                 }
             }
-            System.out.println("ROUND FINISHED " + counter++);
+            battleLog += "ROUND FINISHED " + counter + "<br />";
+            System.out.println("ROUND FINISHED " + counter++ );
             armyBlue.updateVanguard(sequence);
             armyRed.updateVanguard(sequence);
             int combatants = armyRed.armyPool.composition.size() +
                     armyRed.vanguard.composition.size() +
                     armyBlue.armyPool.composition.size() +
                     armyBlue.vanguard.composition.size();
+            battleLog += armyRed.getArmyName() + " has " + (armyRed.vanguard.composition.size() + armyRed.armyPool.composition.size() + "<br />");
             System.out.println(armyRed.getArmyName() + " has " + (armyRed.vanguard.composition.size() + armyRed.armyPool.composition.size()));
+            battleLog += armyBlue.getArmyName() + " has " + (armyBlue.vanguard.composition.size() + armyBlue.armyPool.composition.size() + "<br />");
             System.out.println(armyBlue.getArmyName() + " has " + (armyBlue.vanguard.composition.size() + armyBlue.armyPool.composition.size()) );
         }
         if (armyRed.vanguard.composition.size() > armyBlue.vanguard.composition.size()) {

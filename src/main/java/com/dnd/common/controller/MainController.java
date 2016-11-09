@@ -32,11 +32,12 @@ public class MainController {
         rightArmy.fillArmy();
         Battleground battleground = new Battleground(leftArmy, rightArmy, 100);
         model.addAttribute("winner", battleground.battle());
+        model.addAttribute("battleLog", battleground.getBattleLog());
         return "battle";
     }
 
     @RequestMapping (value = "/battle", method = RequestMethod.GET)
-    public String battleResolve(@ModelAttribute("winner") Army army, Model model) {
+    public String battleResolve(@ModelAttribute("winner") Army army, @ModelAttribute("battleLog") String battleLog, Model model) {
         return "battle";
     }
 

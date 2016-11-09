@@ -8,18 +8,19 @@ body {
     padding: 20px;
 }
 
-form {
-    max-width: 240px;
+#textbox {
+
+    max-width: 320px;
     margin: 0 auto;
     font-size: 14px;
     border: 50px solid transparent;
     border-image-source: url("/resources/assets/img/formborder.png");
     border-image-slice: 110 fill;
 }
+
 form > div {
     position: relative;
     border-bottom: 1px solid #04282e;
-
 }
 
 form > div > input[type="text"] {
@@ -51,7 +52,7 @@ form > .submitbutton:hover {
 .returnbutton {
     width: 100%;
     border: 0;
-    background-color: #b92c28;
+    background-color: rgba(185, 44, 40, 0.15);
     border: none;
     color: white;
     padding: 10px;
@@ -63,10 +64,6 @@ form > .submitbutton:hover {
 
 .returnbutton:hover {
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
-}
-
-p {
-    color: white;
 }
 
 

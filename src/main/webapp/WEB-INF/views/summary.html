@@ -23,21 +23,23 @@
 <body>
 
 <div class="center-block">
-    <form th:action="@{/summary}" method="post">
-        <div>
-            <input type="text" th:field="*{armyForm.armyNameLeft}"/>
-        </div>
-        <div>
-            <input type="text" th:field="*{armyForm.armySizeLeft}"/>
-        </div>
-        <div>
-            <input type="text" th:field="*{armyForm.armyNameRight}"/>
-        </div>
-        <div>
-            <input type="text" th:field="*{armyForm.armySizeRight}"/>
-        </div>
-        <button class="submitbutton" value="submit">Submit</button>
-    </form>
+    <div id = "textbox">
+        <form th:action="@{/summary}" method="post">
+            <div>
+                <input type="text" th:field="*{armyForm.armyNameLeft}"/>
+            </div>
+            <div>
+                <input type="text" th:field="*{armyForm.armySizeLeft}"/>
+            </div>
+            <div>
+                <input type="text" th:field="*{armyForm.armyNameRight}"/>
+            </div>
+            <div>
+                <input type="text" th:field="*{armyForm.armySizeRight}"/>
+            </div>
+            <button class="submitbutton" value="submit">Submit</button>
+        </form>
+    </div>
 </div>
 
 
