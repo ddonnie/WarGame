@@ -5,7 +5,7 @@
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="description" content="">
     <meta name="author" content="">
 
@@ -22,8 +22,19 @@
 
 <body>
 
-<div class="center-block">
-    <div id = "textbox">
+<div id="container" class="container">
+    <ul id="scene" class="scene">
+        <li class="layer" data-depth="0.00"><img src="/resources/assets/img/back00.png"></li>
+        <li class="layer" data-depth="0.30"><img src="/resources/assets/img/back01.png"></li>
+        <li class="layer" data-depth="0.20"><img src="/resources/assets/img/back02.png"></li>
+        <li class="layer" data-depth="0.15"><img src="/resources/assets/img/back03.png"></li>
+        <li class="layer" data-depth="0.10"><img src="/resources/assets/img/back04.png"></li>
+        <li class="layer" data-depth="0.08"><img src="/resources/assets/img/back05.png"></li>
+        <li class="layer" data-depth="0.00"><img src="/resources/assets/img/back06.png"></li>
+        <li class="layer" data-depth="0.00"><img src="/resources/assets/img/back07.png"></li>
+    </ul>
+
+    <div id="textbox">
         <form th:action="@{/summary}" method="post">
             <div>
                 <input type="text" th:field="*{armyForm.armyNameLeft}"/>
@@ -40,14 +51,29 @@
             <button class="submitbutton" value="submit">Submit</button>
         </form>
     </div>
+
+    <canvas id="knightAnimation"/>
+
 </div>
 
+<script src="/resources/js/background.js"></script>
+
+<!-- Parallax-->
+<script src="/resources/js/parallax.js"></script>
 
 <!-- jQuery -->
 <script src="/resources/js/jquery.js"></script>
 
 <!-- Bootstrap Core JavaScript -->
 <script src="/resources/js/bootstrap.min.js"></script>
+
+<script>
+
+    // Pretty simple huh?
+    var scene = document.getElementById('scene');
+    var parallax = new Parallax(scene);
+
+</script>
 
 </body>
 

@@ -1,21 +1,47 @@
 body {
-    background: #0e1e24 url("/resources/assets/img/background.gif") fixed no-repeat;
-    font-family: 'PT Sans', sans-serif;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: 100% auto;
-    padding: 20px;
+    font-family: monospace;
+    background: #0e1e24;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    padding: 0;
+}
+
+.scene {
+    padding: 0;
+    margin: 0;
+}
+
+.fill {
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+    left: 5%;
+    top: 5%;
+}
+
+.expand-width {
+    width: 100%;
 }
 
 #textbox {
-
-    max-width: 320px;
+    z-index: 100;
+    top: 0;
     margin: 0 auto;
+    position: absolute;
+    max-width: 300px;
     font-size: 14px;
     border: 50px solid transparent;
     border-image-source: url("/resources/assets/img/formborder.png");
     border-image-slice: 110 fill;
+    border-image-repeat: round;
 }
 
 form > div {
@@ -65,6 +91,8 @@ form > .submitbutton:hover {
 .returnbutton:hover {
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
 }
+
+
 
 
 
